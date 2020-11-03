@@ -1,41 +1,218 @@
-html{
-	font-size: 100%;
-	background-color: white;
-	color	: black;
-	line-height: 1.3;
-	margin-right: 100px;
+:root{
+	--main-bg-color: white;
+	--akzent-color: #58aee0;
+	--main-font-color: black;
+	--akzent-font-color: #5F5F5F;
 }
 
+/* Beleren Bold */
+@font-face {
+  font-family: "Beleren Bold";
+  src:
+    url("beleren/Beleren2016-Bold.woff") format("woff"),
+    url("beleren/Beleren2016-Bold.ttf") format("truetype"),
+    url("beleren/Beleren2016-Bold.svg#Beleren2016-Bold") format("svg");
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Beleren SmallCaps Bold */
+@font-face {
+  font-family: "Beleren SmallCaps Bold";
+  src:
+    url("beleren/Beleren2016SmallCaps-Bold.woff") format("woff"),
+    url("beleren/Beleren2016SmallCaps-Bold.ttf") format("truetype"),
+    url("beleren/Beleren2016SmallCaps-Bold.svg#Beleren2016SmallCaps-Bold") format("svg");
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Beleren SmallCaps BoldItalic */
+@font-face {
+  font-family: "Beleren SmallCaps BoldItalic";
+  src:
+    url("beleren/Beleren2016SmallCaps-BoldItalic.woff") format("woff"),
+    url("beleren/Beleren2016SmallCaps-BoldItalic.ttf") format("truetype"),
+    url("beleren/Beleren2016SmallCaps-BoldItalic.svg#Beleren2016SmallCaps-BoldItalic") format("svg");
+  font-style: italic;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+html{
+	font-size: 100%;
+	background-color: var(--main-bg-color);
+	color: var(--main-font-color);
+	line-height: 1.3;
+}
+
+body{
+	margin-right: 80px;
+	margin-left: 5px;
+}
+
+h2
+{
+	font-family: Beleren Bold;
+}
+h3
+{
+	font-family: Beleren Bold;
+}
+a:link {
+  text-decoration: none;
+  color: var(--akzent-color);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--akzent-color);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--akzent-font-color);
+}
+
+a:active {
+  text-decoration: underline;
+  color: var(--akzent-font-color);
+}
+a[href^='https://scryfall.com/'] {
+	color: var(--main-font-color);
+    background: transparent url('scryfall.png') center left no-repeat;
+    padding-left: 14px;
+}
+a[href^='https://magic.wizards.com/'] {
+    background: transparent url('wizards.png') center left no-repeat;
+    padding-left: 14px;
+}
+a[href^='https://wpn.wizards.com/'] {
+    background: transparent url('wizards.png') center left no-repeat;
+    padding-left: 14px;
+}
+.preline{
+	border: 1px solid var(--akzent-color);
+	background-color: var(--akzent-color);
+}
+.post{
+	font-size: normal;
+}
+.date{
+	font-family: Beleren Bold;
+	color: var(--main-font-color);
+	font-size: medium;
+	float: right;
+}
+.headline{
+	font-family: Beleren Bold;
+	font-size: x-large;
+	color: var(--main-font-color);
+}
+
+.archon_title{
+	font-size: xxx-large;
+	color	: var(--akzent-font-color);
+	margin-bottom: 5px;
+	font-family: Beleren SmallCaps Bold;
+	text-align: center;
+	text-shadow: 5px 5px 16px var(--akzent-color);
+}
+.archon_subtitle{
+	font-size: xx-large;
+	color	: var(--akzent-font-color);
+	margin-bottom: 10px;
+	font-family: Beleren SmallCaps Bold;
+	text-align: center;
+	text-shadow: 2px 2px 8px var(--akzent-color);
+}
 
 .pure-menu-heading
 {
-	font-size: x-large;
-	color	: black
+	font-size: xxx-large;
+	color	: var(--main-font-color);
+	font-family: Beleren Bold;  
 }
 .pure-menu-item
 {
 	font-size: x-large;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	margin-left: 5px;
 	width:100%;
+	font-family: Beleren Bold
 }
 
 ul.a{
-	list-style-type: circle
+	list-style-type: circle;
 }
 ul.b {
 	list-style-type: none;
 }
 
-.pure-button {
-	font-family: inherit; 
+a.pure-button {
+	font-family: Beleren Bold; 
 	font-size: 100%; 
 	padding: .5em 1em; 
-	color: #444; 
-	color:rgba(0,0,0,.8); 
-	border: 1px solid #999; 
-	border: 0 rgba(0,0,0,0); 
-	background-color: #58aee0; 
+	color: var(--main-font-color); 
+	border: 1px solid var(--akzent-color);  
+	background-color: var(--akzent-color); 
 	text-decoration: none; 
 	border-radius: 4px; 
 	width: 90%;
+	text-shadow: 2px 2px 8px var(--main-bg-color);
+	text-align: middle;
+}
+
+a.pure-button.discord{
+
+}
+
+li.newunbanned{
+	color: red;
+	text-decoration: line-through;
+	background: transparent url('new.png') center left no-repeat;
+    padding-left: 18px;
+}
+
+li.newbanned{
+	color: red;
+	background: transparent url('new.png') center left no-repeat;
+    padding-left: 18px;
+}
+
+.collapsible {
+	background: transparent;
+	cursor: pointer;
+	font-size: large;
+	color	: var(--font-color);
+	margin-bottom: 7px;
+	font-family: Beleren Bold;
+	width: 100%;
+	border: none;
+	text-align: left;
+	border-radius: 4px; 
+	outline: none;
+	text-shadow: 2px 2px 8px var(--main-bg-color);
+}
+
+.active, .collapsible:hover {
+  background-color: var(--akzent-color);
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: transparent;
+}
+
+img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
