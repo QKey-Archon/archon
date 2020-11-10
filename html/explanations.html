@@ -18,9 +18,6 @@
 		imgSource: "scryfall",
 		language: "en",
 	}
-	
-	var coll = document.getElementsByClassName("collapsible");
-	var i;
 	</script>
 	<script src="https://mtgify.org/dist/autocard.js?v=20190714"></script>
     <meta charset="utf-8">
@@ -249,10 +246,15 @@
   </body>
 	<script>
 	var coll = document.getElementsByClassName("collapsible");
-	var i;
 
-	for (i = 0; i < coll.length; i++) {
-	  coll[i].addEventListener("click", function() {
+	for(let clickedItem of coll){
+	  clickedItem.addEventListener("click", function(){
+		for(let item of coll){
+			if(otherItem.classList.contains("active")&&!otherItem.isSameNode(this)){
+				otherItem.classList.remove("active");
+				otherItem.nextElementSibling.style.maxHeight = null;
+			}
+		}
 		this.classList.toggle("active");
 		var content = this.nextElementSibling;
 		if (content.style.maxHeight){
