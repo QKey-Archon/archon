@@ -250,9 +250,9 @@
 	for(let clickedItem of coll){
 	  clickedItem.addEventListener("click", function(){
 		for(let item of coll){
-			if(otherItem.classList.contains("active")&&!otherItem.isSameNode(this)){
-				otherItem.classList.remove("active");
-				otherItem.nextElementSibling.style.maxHeight = null;
+			if(item.classList.contains("active")&&!item.isSameNode(this)){
+				item.classList.remove("active");
+				item.nextElementSibling.style.maxHeight = null;
 			}
 		}
 		this.classList.toggle("active");
